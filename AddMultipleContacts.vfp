@@ -1,0 +1,26 @@
+<apex:page Controller="AddmultipleContactsController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages id="showmsg"></apex:pageMessages>
+            <apex:pageBlockTable value="{!listContact}" var="con">
+                <apex:column headerValue="First Name">
+                    <apex:inputField value="{!con.FirstName}"/>
+                </apex:column>
+                <apex:column headerValue="Last Name">
+                    <apex:inputField value="{!con.LastName}"/>
+                </apex:column>
+                <apex:column headerValue="Email">
+                    <apex:inputField value="{!con.Email}"/>
+                </apex:column>
+                <apex:column headerValue="Account Name">
+                    <apex:inputField value="{!con.AccountId}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Add Contacts Row" action="{!addContact}"/>
+                <apex:commandButton value="Save Contacts" action="{!saveContact}" rerender="showmsg"/>
+                 <apex:commandButton value="Show All Contacts" action="{!showAllCont}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
