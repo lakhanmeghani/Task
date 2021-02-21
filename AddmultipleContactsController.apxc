@@ -1,0 +1,26 @@
+public class AddmultipleContactsController {
+    Contact contact = new Contact();
+    public list<Contact> listContact{ get; set; }
+    
+    public AddmultipleContactsController() {
+        listContact=new list<Contact>();
+        listContact.add(Contact);
+    }
+    
+    Public void addContact() {
+        Contact con = new Contact();
+        listContact.add(con);
+    }
+    public void saveContact() {
+        for(Integer i=1; i<listContact.size(); i++) {
+            insert listContact;
+        }
+       // return Page.DisplayAllContactsOnSave;
+       ApexPages.addmessage(new ApexPages.message(ApexPages.severity.CONFIRM,'You Contacts are Saved'));
+ 
+    }
+     public PageReference showAllCont() {
+        return Page.DisplayAllContacts;
+    }
+    
+}
